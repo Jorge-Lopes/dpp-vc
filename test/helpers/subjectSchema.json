@@ -1,0 +1,10 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "id": "@id",
+    "name": "name",
+    "type": "@type",
+    "brand": "brand",
+    "category": "category"
+  }
+}
