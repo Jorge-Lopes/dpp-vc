@@ -2,7 +2,7 @@ export const getBaseCredential = (controller) => {
     return {
         "@context": [
             "https://www.w3.org/2018/credentials/v1",
-            "https://schema.org/"
+            "https://schema.org/",
         ],
         type: [
             "VerifiableCredential",
