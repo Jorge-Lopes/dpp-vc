@@ -60,8 +60,29 @@ describe('verifiable credentials', () => {
         const signedPresentation = await signPresentation(verifiablePresentation, suite, '12ec21', documentLoader)
         
         expect(signedPresentation).toBeDefined();
-        
+    })
+
+    test('canonize proof', async () => {
+        const { keyPair, suite } = issuer
+        const { documentLoader } = customDocumentLoader
+
+        const verifiableCredential = await issueCredential(baseCredential, suite, documentLoader)
+        const presentation = createPresentation(verifiableCredential, 'test:ebc6f1c2', keyPair.controller)
+
+        const proofSet = []
+
+        const { AuthenticationProofPurpose } = jsigs.purposes;
+        const domain = undefined;
+        const challenge = '12ec21'
+        const purpose = new AuthenticationProofPurpose({
+            domain,
+            challenge
+        });
+
+        const proof = await suite.createProof({
+            document: presentation, purpose, proofSet, documentLoader
+        });
+
+        expect(proof).toBeDefined();
     })
 })
-
-
