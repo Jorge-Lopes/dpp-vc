@@ -1,12 +1,12 @@
 import * as vc from "@digitalbazaar/vc";
 import jsigs from "jsonld-signatures";
-import { suiteContext } from "@digitalbazaar/ed25519-signature-2020";
+import { suiteContext } from "@digitalbazaar/ed25519-signature-2018";
 import { klona } from 'klona';
 
 export const getCustomDocumentLoader = async () => {
     const remoteDocuments = new Map()
 
-    remoteDocuments.set(suiteContext.constants.CONTEXT_URL, suiteContext)
+    remoteDocuments.set(suiteContext.CONTEXT_URL, suiteContext.CONTEXT)
 
     const { extendContextLoader } = jsigs;
     const { defaultDocumentLoader } = vc;
