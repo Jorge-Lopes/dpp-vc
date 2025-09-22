@@ -1,6 +1,6 @@
 import * as vc from "@digitalbazaar/vc";
 import jsigs from "jsonld-signatures";
-import { suiteContext } from "@digitalbazaar/ed25519-signature-2018";
+import { suiteContext } from "@digitalbazaar/ed25519-signature-2020";
 import { klona } from "klona";
 
 export const getCustomDocumentLoader = async () => {

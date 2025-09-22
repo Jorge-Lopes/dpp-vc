@@ -1,9 +1,6 @@
 export const getCredential = (controller) => {
   return {
-    "@context": [
-      "https://www.w3.org/2018/credentials/v1",
-      "https://schema.org/",
-    ],
+    "@context": ["https://www.w3.org/ns/credentials/v2", "https://schema.org/"],
     type: ["VerifiableCredential", "ProductCredential"],
     issuer: controller,
     issuanceDate: new Date().toISOString(),
@@ -22,11 +19,6 @@ export const getSchema = async () => {
   const schemaContext = {
     "@context": {
       "@vocab": "https://schema.org/",
-      id: "@id",
-      name: "name",
-      type: "@type",
-      brand: "brand",
-      category: "category",
     },
   };
 

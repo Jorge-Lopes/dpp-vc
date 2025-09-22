@@ -8,17 +8,11 @@ export const verifyCredential = async (credential, suite, documentLoader) => {
   return await vc.verifyCredential({ credential, suite, documentLoader });
 };
 
-export const createPresentation = (
-  verifiableCredential,
-  id,
-  holder,
-  version = 1.0,
-) => {
+export const createPresentation = (verifiableCredential, id, holder) => {
   return vc.createPresentation({
     verifiableCredential,
     id,
     holder,
-    version,
   });
 };
 

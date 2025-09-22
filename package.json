@@ -7,15 +7,14 @@
   "license": "ISC",
   "type": "module",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "lint": "npx prettier . --write"
   },
   "dependencies": {
     "@digitalbazaar/vc": "^7.2.0"
   },
   "devDependencies": {
-    "@digitalbazaar/ed25519-signature-2018": "^4.1.0",
     "@digitalbazaar/ed25519-signature-2020": "^5.4.0",
-    "@digitalbazaar/ed25519-verification-key-2018": "^4.0.0",
     "@digitalbazaar/ed25519-verification-key-2020": "^4.2.0",
     "jest": "^30.1.3",
     "jsonld-signatures": "^11.5.0",
