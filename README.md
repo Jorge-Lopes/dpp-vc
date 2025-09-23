@@ -1,51 +1,50 @@
-# Verifiable Credentials Prototype 
+# Verifiable Credentials Prototype
+
 **(Work in Progress)**
 
-This project is a prototype implementation demonstrating the issuance, verification, and presentation of Verifiable Credentials, while using modern decentralized identity standards and libraries.
+## Project Description
 
-## Overview
+This prototype provides a practical example of how to issue, verify, and present Verifiable Credentials using the [@digitalbazaar/vc](https://github.com/digitalbazaar/vc-js) library and related tools. It leverages Decentralized Identifiers (DIDs) and JSON-LD for semantic interoperability, and demonstrates how to use custom document loaders for local and remote context resolution.
 
-The prototype showcases how to:
-- Issue a verifiable credential.
-- Verify the authenticity of a credential.
-- Create and sign a verifiable presentation.
-- Use decentralized identifiers (DIDs) and custom document loaders.
+The project is focused on product credentials, but the approach is generalizable to other credential types. It is intended as a learning resource or starting point for building decentralized identity solutions.
 
-## Major Concepts
+## Key Features
 
-### Verifiable Credential
-A digital statement made by an issuer about a subject, cryptographically signed to ensure authenticity and integrity. In this prototype, credentials are issued for products, including attributes like name, brand, and category.
+- **Issue Verifiable Credentials:**  
+  Generate cryptographically signed credentials for products, including attributes like name, brand, and category.
 
-### Linked Data & JSON-LD
-Credentials can use [JSON-LD](https://json-ld.org/) for semantic interoperability, enabling data to be linked and understood across different systems.
+- **Verify Credentials:**  
+  Check the authenticity and integrity of credentials using linked data proofs and signature suites.
 
-### Context
-The `@context` property in credentials defines the vocabulary and semantics. This prototype uses:
-- `https://www.w3.org/2018/credentials/v1` (W3C VC context)
-- `https://schema.org/` (Product schema)
+- **Create and Sign Presentations:**  
+  Bundle one or more credentials into a verifiable presentation and sign it for secure sharing.
 
-### DocumentLoader
-A custom document loader resolves contexts and DIDs locally or remotely, ensuring all necessary schemas and keys are available for credential processing.
+- **Decentralized Identifiers (DIDs):**  
+  Use the `did:key` method to generate self-sovereign identifiers directly from public keys.
 
-### Decentralized Identifiers (DIDs)
-DIDs are self-sovereign identifiers that do not require a central registry. This project uses the `did:key` method, which derives a DID directly from a public key.
+- **Custom Document Loader:**  
+  Resolve JSON-LD contexts and DIDs locally or remotely, supporting flexible credential processing.
 
-## Libraries Used
+- **Extensive Test Suite:**  
+  Includes automated tests for all major flows: issuance, verification, presentation creation, and signing.
 
-- [`@digitalbazaar/vc`](https://github.com/digitalbazaar/vc-js): Verifiable Credentials library.
-- [`jsonld-signatures`](https://github.com/digitalbazaar/jsonld-signatures): JSON-LD signatures.
-- [`@digitalbazaar/ed25519-signature-2020`](https://github.com/digitalbazaar/ed25519-signature-2020): Ed25519 signature suite.
-- [`@digitalbazaar/ed25519-verification-key-2020`](https://github.com/digitalbazaar/ed25519-verification-key-2020): Ed25519 key suite.
-- [`klona`](https://github.com/lukeed/klona): Deep cloning utility.
+## Setup Instructions
 
-## Run
+Clone the repository and
+
+```sh
+git clone https://github.com/Jorge-Lopes/dpp-vc
+cd dpp-vc
+```
 
 Install dependencies:
+
 ```sh
 npm install
 ```
 
-Execute tests:
+Run unit tests:
+
 ```sh
 npm test
 ```
